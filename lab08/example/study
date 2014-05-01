@@ -1,0 +1,81 @@
+
+star.out:     file format elf32-i386
+
+
+Disassembly of section .text:
+
+08048080 <_start>:
+ 8048080:	b8 04 00 00 00       	mov    $0x4,%eax
+ 8048085:	bb 01 00 00 00       	mov    $0x1,%ebx
+ 804808a:	b9 c9 91 04 08       	mov    $0x80491c9,%ecx
+ 804808f:	ba 04 00 00 00       	mov    $0x4,%edx
+ 8048094:	cd 80                	int    $0x80
+ 8048096:	b8 04 00 00 00       	mov    $0x4,%eax
+ 804809b:	bb 01 00 00 00       	mov    $0x1,%ebx
+ 80480a0:	b9 b4 91 04 08       	mov    $0x80491b4,%ecx
+ 80480a5:	ba 15 00 00 00       	mov    $0x15,%edx
+ 80480aa:	cd 80                	int    $0x80
+ 80480ac:	c7 05 58 92 04 08 50 	movl   $0x50,0x8049258
+ 80480b3:	00 00 00 
+
+080480b6 <repeat>:
+ 80480b6:	a1 58 92 04 08       	mov    0x8049258,%eax
+ 80480bb:	ba 00 00 00 00       	mov    $0x0,%edx
+ 80480c0:	b9 0a 00 00 00       	mov    $0xa,%ecx
+ 80480c5:	f7 f9                	idiv   %ecx
+ 80480c7:	04 30                	add    $0x30,%al
+ 80480c9:	a2 d2 91 04 08       	mov    %al,0x80491d2
+ 80480ce:	80 c2 30             	add    $0x30,%dl
+ 80480d1:	88 15 d3 91 04 08    	mov    %dl,0x80491d3
+ 80480d7:	b8 04 00 00 00       	mov    $0x4,%eax
+ 80480dc:	bb 01 00 00 00       	mov    $0x1,%ebx
+ 80480e1:	b9 cd 91 04 08       	mov    $0x80491cd,%ecx
+ 80480e6:	ba 08 00 00 00       	mov    $0x8,%edx
+ 80480eb:	cd 80                	int    $0x80
+ 80480ed:	b8 04 00 00 00       	mov    $0x4,%eax
+ 80480f2:	bb 01 00 00 00       	mov    $0x1,%ebx
+ 80480f7:	b9 d5 91 04 08       	mov    $0x80491d5,%ecx
+ 80480fc:	ba 01 00 00 00       	mov    $0x1,%edx
+ 8048101:	cd 80                	int    $0x80
+ 8048103:	c7 05 5c 92 04 08 00 	movl   $0x0,0x804925c
+ 804810a:	00 00 00 
+ 804810d:	c7 05 60 92 04 08 80 	movl   $0x13880,0x8049260
+ 8048114:	38 01 00 
+ 8048117:	c6 05 d7 91 04 08 01 	movb   $0x1,0x80491d7
+ 804811e:	bb 01 00 00 00       	mov    $0x1,%ebx
+ 8048123:	b9 d7 91 04 08       	mov    $0x80491d7,%ecx
+ 8048128:	ba 00 00 00 00       	mov    $0x0,%edx
+ 804812d:	be 00 00 00 00       	mov    $0x0,%esi
+ 8048132:	bf 5c 92 04 08       	mov    $0x804925c,%edi
+ 8048137:	b8 8e 00 00 00       	mov    $0x8e,%eax
+ 804813c:	cd 80                	int    $0x80
+ 804813e:	3d 00 00 00 00       	cmp    $0x0,%eax
+ 8048143:	74 1d                	je     8048162 <no_key>
+ 8048145:	b8 03 00 00 00       	mov    $0x3,%eax
+ 804814a:	bb 00 00 00 00       	mov    $0x0,%ebx
+ 804814f:	b9 d5 91 04 08       	mov    $0x80491d5,%ecx
+ 8048154:	ba 01 00 00 00       	mov    $0x1,%edx
+ 8048159:	cd 80                	int    $0x80
+ 804815b:	b8 01 00 00 00       	mov    $0x1,%eax
+ 8048160:	cd 80                	int    $0x80
+
+08048162 <no_key>:
+ 8048162:	b8 04 00 00 00       	mov    $0x4,%eax
+ 8048167:	bb 01 00 00 00       	mov    $0x1,%ebx
+ 804816c:	b9 cd 91 04 08       	mov    $0x80491cd,%ecx
+ 8048171:	ba 08 00 00 00       	mov    $0x8,%edx
+ 8048176:	cd 80                	int    $0x80
+ 8048178:	b8 04 00 00 00       	mov    $0x4,%eax
+ 804817d:	bb 01 00 00 00       	mov    $0x1,%ebx
+ 8048182:	b9 d6 91 04 08       	mov    $0x80491d6,%ecx
+ 8048187:	ba 01 00 00 00       	mov    $0x1,%edx
+ 804818c:	cd 80                	int    $0x80
+ 804818e:	ff 0d 58 92 04 08    	decl   0x8049258
+ 8048194:	a1 58 92 04 08       	mov    0x8049258,%eax
+ 8048199:	3d 00 00 00 00       	cmp    $0x0,%eax
+ 804819e:	0f 85 12 ff ff ff    	jne    80480b6 <repeat>
+
+080481a4 <set_col_80>:
+ 80481a4:	c7 05 58 92 04 08 50 	movl   $0x50,0x8049258
+ 80481ab:	00 00 00 
+ 80481ae:	e9 03 ff ff ff       	jmp    80480b6 <repeat>

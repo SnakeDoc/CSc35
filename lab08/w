@@ -1,0 +1,88 @@
+
+8:     file format elf32-i386
+
+
+Disassembly of section .text:
+
+08048074 <_start>:
+ 8048074:	b8 04 00 00 00       	mov    $0x4,%eax
+ 8048079:	bb 01 00 00 00       	mov    $0x1,%ebx
+ 804807e:	b9 cc 91 04 08       	mov    $0x80491cc,%ecx
+ 8048083:	8b 15 d0 91 04 08    	mov    0x80491d0,%edx
+ 8048089:	cd 80                	int    $0x80
+ 804808b:	b8 04 00 00 00       	mov    $0x4,%eax
+ 8048090:	bb 01 00 00 00       	mov    $0x1,%ebx
+ 8048095:	b9 fe 91 04 08       	mov    $0x80491fe,%ecx
+ 804809a:	8b 15 0c 92 04 08    	mov    0x804920c,%edx
+ 80480a0:	cd 80                	int    $0x80
+ 80480a2:	b8 04 00 00 00       	mov    $0x4,%eax
+ 80480a7:	bb 01 00 00 00       	mov    $0x1,%ebx
+ 80480ac:	b9 d4 91 04 08       	mov    $0x80491d4,%ecx
+ 80480b1:	8b 15 dc 91 04 08    	mov    0x80491dc,%edx
+ 80480b7:	cd 80                	int    $0x80
+ 80480b9:	b8 04 00 00 00       	mov    $0x4,%eax
+ 80480be:	bb 01 00 00 00       	mov    $0x1,%ebx
+ 80480c3:	b9 e8 91 04 08       	mov    $0x80491e8,%ecx
+ 80480c8:	8b 15 e9 91 04 08    	mov    0x80491e9,%edx
+ 80480ce:	cd 80                	int    $0x80
+ 80480d0:	b8 04 00 00 00       	mov    $0x4,%eax
+ 80480d5:	bb 01 00 00 00       	mov    $0x1,%ebx
+ 80480da:	b9 ed 91 04 08       	mov    $0x80491ed,%ecx
+ 80480df:	8b 15 ee 91 04 08    	mov    0x80491ee,%edx
+ 80480e5:	cd 80                	int    $0x80
+
+080480e7 <again>:
+ 80480e7:	b8 04 00 00 00       	mov    $0x4,%eax
+ 80480ec:	bb 01 00 00 00       	mov    $0x1,%ebx
+ 80480f1:	b9 e0 91 04 08       	mov    $0x80491e0,%ecx
+ 80480f6:	8b 15 e4 91 04 08    	mov    0x80491e4,%edx
+ 80480fc:	cd 80                	int    $0x80
+ 80480fe:	b8 04 00 00 00       	mov    $0x4,%eax
+ 8048103:	bb 01 00 00 00       	mov    $0x1,%ebx
+ 8048108:	b9 e8 91 04 08       	mov    $0x80491e8,%ecx
+ 804810d:	8b 15 e9 91 04 08    	mov    0x80491e9,%edx
+ 8048113:	cd 80                	int    $0x80
+ 8048115:	b8 04 00 00 00       	mov    $0x4,%eax
+ 804811a:	bb 01 00 00 00       	mov    $0x1,%ebx
+ 804811f:	b9 ed 91 04 08       	mov    $0x80491ed,%ecx
+ 8048124:	8b 15 ee 91 04 08    	mov    0x80491ee,%edx
+ 804812a:	cd 80                	int    $0x80
+ 804812c:	83 2d f2 91 04 08 01 	subl   $0x1,0x80491f2
+ 8048133:	a1 f2 91 04 08       	mov    0x80491f2,%eax
+ 8048138:	83 f8 00             	cmp    $0x0,%eax
+ 804813b:	74 46                	je     8048183 <reset_col>
+ 804813d:	c7 05 10 92 04 08 00 	movl   $0x0,0x8049210
+ 8048144:	00 00 00 
+ 8048147:	c7 05 14 92 04 08 a0 	movl   $0x186a0,0x8049214
+ 804814e:	86 01 00 
+ 8048151:	c6 05 18 92 04 08 01 	movb   $0x1,0x8049218
+ 8048158:	bb 01 00 00 00       	mov    $0x1,%ebx
+ 804815d:	b9 18 92 04 08       	mov    $0x8049218,%ecx
+ 8048162:	ba 00 00 00 00       	mov    $0x0,%edx
+ 8048167:	be 00 00 00 00       	mov    $0x0,%esi
+ 804816c:	bf 10 92 04 08       	mov    $0x8049210,%edi
+ 8048171:	b8 8e 00 00 00       	mov    $0x8e,%eax
+ 8048176:	cd 80                	int    $0x80
+ 8048178:	83 f8 00             	cmp    $0x0,%eax
+ 804817b:	0f 84 66 ff ff ff    	je     80480e7 <again>
+ 8048181:	eb 2b                	jmp    80481ae <exit_prog>
+
+08048183 <reset_col>:
+ 8048183:	b8 04 00 00 00       	mov    $0x4,%eax
+ 8048188:	bb 01 00 00 00       	mov    $0x1,%ebx
+ 804818d:	b9 d4 91 04 08       	mov    $0x80491d4,%ecx
+ 8048192:	8b 15 dc 91 04 08    	mov    0x80491dc,%edx
+ 8048198:	cd 80                	int    $0x80
+ 804819a:	a1 f2 91 04 08       	mov    0x80491f2,%eax
+ 804819f:	b8 50 00 00 00       	mov    $0x50,%eax
+ 80481a4:	a3 f2 91 04 08       	mov    %eax,0x80491f2
+ 80481a9:	e9 39 ff ff ff       	jmp    80480e7 <again>
+
+080481ae <exit_prog>:
+ 80481ae:	b8 04 00 00 00       	mov    $0x4,%eax
+ 80481b3:	bb 01 00 00 00       	mov    $0x1,%ebx
+ 80481b8:	b9 cc 91 04 08       	mov    $0x80491cc,%ecx
+ 80481bd:	8b 15 d0 91 04 08    	mov    0x80491d0,%edx
+ 80481c3:	cd 80                	int    $0x80
+ 80481c5:	b8 01 00 00 00       	mov    $0x1,%eax
+ 80481ca:	cd 80                	int    $0x80
